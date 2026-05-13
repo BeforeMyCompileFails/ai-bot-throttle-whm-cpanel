@@ -2,7 +2,7 @@
 #
 # uninstall.sh — Remove AI bot rate-limiting cleanly
 #
-# https://github.com/BeforeMyCompileFails/ai-bot-throttle-cpanel
+# https://github.com/BeforeMyCompileFails/ai-bot-throttle-whm-cpanel
 #
 # This removes:
 #   /etc/nginx/conf.d/ai-bot-throttle.conf
