@@ -55,8 +55,8 @@ Will NOT work on:
 ## Install
 
 ```bash
-git clone https://github.com/BeforeMyCompileFails/ai-bot-throttle-cpanel.git
-cd ai-bot-throttle-cpanel
+git clone https://github.com/BeforeMyCompileFails/ai-bot-throttle-whm-cpanel.git
+cd ai-bot-throttle-whm-cpanel
 sudo bash install.sh
 ```
 
@@ -179,9 +179,7 @@ EA-Nginx auto-includes everything in `/etc/nginx/conf.d/server-includes/*.conf` 
 
 ## Origin story
 
-This was written at 1 AM after a long night debugging a real cPanel server (sgc.hsplus.email's sibling box, `atlantis`) that started hitting load-avg 9 spikes after running fine for years. Root cause: the cumulative effect of GPTBot + ClaudeBot + Bytespider + MJ12bot + Ahrefs etc. all crawling 12 customer WordPress sites simultaneously had crossed a threshold the php-fpm pools couldn't absorb anymore.
-
-The first draft of this throttle was buggy — it accidentally throttled real human visitors because of a subtle issue with how `$binary_remote_addr` interacts with composite map keys. We caught it because someone was browsing avto-kozmetika.si (a car-polish e-commerce site) at the time and their WP resource fetches were getting `[warn] delaying request` entries in the nginx error log. After two iterations and one painful `[emerg]` from trying to swap the zone key with a graceful reload, the current design works correctly: humans get an empty key (= skipped), bots get their IP as the key (= properly rate-limited).
+This was written at 1 AM after a long night debugging a real cPanel server that started hitting load-avg 9 spikes after running fine for years. Root cause: the cumulative effect of GPTBot + ClaudeBot + Bytespider + MJ12bot + Ahrefs etc. all crawling 12 customer WordPress sites simultaneously had crossed a threshold the php-fpm pools couldn't absorb anymore.
 
 The mistakes are baked into the code comments and README intentionally so other admins don't repeat them.
 
@@ -201,4 +199,4 @@ Issues for problems or new bot identifications are also useful.
 
 ## Credits
 
-Built by [BeforeMyCompileFails](https://github.com/BeforeMyCompileFails), with debugging help from Claude (Anthropic).
+Built by [BeforeMyCompileFails](https://github.com/BeforeMyCompileFails)
