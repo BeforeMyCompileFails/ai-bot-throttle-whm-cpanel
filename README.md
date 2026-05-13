@@ -1,4 +1,4 @@
-# ai-bot-throttle-cpanel
+# AI BOT Throttle for WHM/cPanel servers
 
 Server-wide AI crawler and SEO scraper rate-limiting for cPanel/WHM servers running EA-Nginx. **Humans completely unaffected.** Bots get throttled to 1 req/sec at the nginx edge before reaching Apache or PHP-FPM.
 
