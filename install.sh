@@ -2,7 +2,7 @@
 #
 # install.sh — Install AI bot rate-limiting for cPanel/WHM with EA-Nginx
 #
-# https://github.com/BeforeMyCompileFails/ai-bot-throttle-cpanel
+# https://github.com/BeforeMyCompileFails/ai-bot-throttle-whm-cpanel
 #
 # Tested on:
 #   - AlmaLinux 8 / 9 (CentOS-equivalent)
